@@ -523,7 +523,7 @@ def solvePerfForesight(solution_next,DiscFac,LivPrb,CRRA,Rfree,PermGroFac):
 
 
 ###############################################################################
-###############################################################################
+# ##############################################################################
 class ConsIndShockSetup(ConsPerfForesightSolver):
     '''
     A superclass for solvers of one period consumption-saving problems with
@@ -764,7 +764,7 @@ class ConsIndShockSetup(ConsPerfForesightSolver):
 
 
 ####################################################################################################
-####################################################################################################
+# ###################################################################################################
 
 class ConsIndShockSolverBasic(ConsIndShockSetup):
     '''
@@ -995,7 +995,7 @@ class ConsIndShockSolverBasic(ConsIndShockSetup):
 
 
 ###############################################################################
-###############################################################################
+# ##############################################################################
 
 class ConsIndShockSolver(ConsIndShockSolverBasic):
     '''
@@ -1245,7 +1245,7 @@ def solveConsIndShock(solution_next,IncomeDstn,LivPrb,DiscFac,CRRA,Rfree,PermGro
 
 
 ####################################################################################################
-####################################################################################################
+# ###################################################################################################
 
 class ConsKinkedRsolver(ConsIndShockSolver):
     '''
@@ -2445,8 +2445,7 @@ def constructAssetsGrid(parameters):
 
     return aXtraGrid
 
-####################################################################################################
-
+""
 def main():
     import HARK.ConsumptionSaving.ConsumerParameters as Params
     from HARK.utilities import plotFuncsDer, plotFuncs
@@ -2477,8 +2476,7 @@ def main():
         PFexample.initializeSim()
         PFexample.simulate()
 
-###############################################################################
-
+""
     # Make and solve an example consumer with idiosyncratic income shocks
     IndShockExample = IndShockConsumerType(**Params.init_idiosyncratic_shocks)
     IndShockExample.cycles = 0 # Make this type have an infinite horizon
@@ -2545,8 +2543,7 @@ def main():
         LifecycleExample.initializeSim()
         LifecycleExample.simulate()
 
-###############################################################################
-
+""
     # Make and solve a "cyclical" consumer type who lives the same four quarters repeatedly.
     # The consumer has income that greatly fluctuates throughout the year.
     CyclicalExample = IndShockConsumerType(**Params.init_cyclical)
@@ -2571,8 +2568,7 @@ def main():
         CyclicalExample.initializeSim()
         CyclicalExample.simulate()
 
-###############################################################################
-
+""
     # Make and solve an agent with a kinky interest rate
     KinkyExample = KinkedRconsumerType(**Params.init_kinked_R)
     KinkyExample.cycles = 0 # Make the Example infinite horizon
